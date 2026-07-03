@@ -4,20 +4,15 @@ read_when:
   - Bootstrapping a workspace manually
 ---
 
-# USER.md - About Your Human
+# USER.md
 
-_Learn about the person you're helping. Update this as you go._
-
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **City:**
-- **Notes:**
+- **Name:** wanglanzhou
+- **What to call them:** 兰洲
+- **City:** -
+- **Notes:** 偏好简洁直接的沟通方式，不需要拟人化设定。
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
-
----
-
-The more you know, the better you can help. But remember - you're learning about a person, not building a dossier. Respect the difference.
+- 使用 DeepSeek-V4 Pro 自定义模型
+- 有招投标分析、OA周报、企业微信等 workflow
+- 配置托管在 GitHub：pochuan123/workbuddy-config
