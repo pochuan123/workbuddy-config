@@ -37,7 +37,35 @@ git commit -m "update: <简要描述>"
 git push origin main
 ```
 
+## 首次在新电脑克隆
+
+**关键：保护好本地独有文件，不要覆盖！**
+
+当 `~/.workbuddy` 已存在（WorkBuddy 已运行过），需要克隆配置时，按以下步骤：
+
+```powershell
+# 1. 备份本地独有文件（不同步到 Git 的）
+mkdir ~/.workbuddy-backup
+cp ~/.workbuddy/models.json ~/.workbuddy-backup/ 2>$null
+cp ~/.workbuddy/settings.json ~/.workbuddy-backup/ 2>$null
+cp ~/.workbuddy/workbuddy.db ~/.workbuddy-backup/ 2>$null
+
+# 2. 备份剩余目录，然后克隆
+mv ~/.workbuddy ~/.workbuddy-old
+git clone git@github.com:pochuan123/workbuddy-config.git ~/.workbuddy
+
+# 3. 恢复本地独有文件
+cp ~/.workbuddy-backup/models.json ~/.workbuddy/ 2>$null
+cp ~/.workbuddy-backup/settings.json ~/.workbuddy/ 2>$null
+cp ~/.workbuddy-backup/workbuddy.db ~/.workbuddy/ 2>$null
+
+# 4. 清理
+rm -rf ~/.workbuddy-backup ~/.workbuddy-old
+```
+
 ## 注意
 - Git SSH 命令已配置为 `C:/PROGRA~1/Git/usr/bin/ssh.exe`
 - 仓库地址：git@github.com:pochuan123/workbuddy-config.git
 - 代理端口：7897
+- **本地独有文件（不同步）**：`models.json`、`settings.json`、`workbuddy.db`
+- 克隆时务必先备份这些文件，克隆后恢复，否则自定义模型会被清空
