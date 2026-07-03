@@ -1,0 +1,46 @@
+# ============================================
+# WorkBuddy .gitignore
+# ============================================
+
+# --- 运行时/缓存数据（不需要同步）---
+app/
+artifact-index/
+binaries/
+blobs/
+claw-state/
+clipboard-images/
+connectors/
+connectors-marketplace/
+file-history/
+inspiration/
+local_storage/
+logs/
+plans/
+plugin-marketplace-state-new/
+plugins/
+projects/
+sessions/
+skills-marketplace/
+tasks/
+teams/
+traces/
+
+# --- SQLite 数据库（二进制文件，容易冲突）---
+workbuddy.db
+workbuddy.db-shm
+workbuddy.db-wal
+
+# --- 敏感信息（含 token/API key，不同步）---
+settings.json
+models.json
+
+# --- Python/Node 缓存 ---
+__pycache__/
+*.pyc
+node_modules/
+
+# --- 临时文件 ---
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
